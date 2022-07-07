@@ -1,0 +1,449 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+:host {
+  --scrollbar-height: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  clip-path: circle(20%);
+  object-fit: cover;
+  opacity: 0;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  clip-path: circle(20%);
+  outline: none;
+  opacity: 0;
+}
+
+.content {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.vertical::-webkit-scrollbar-thumb {
+  background-color: #34314c;
+  border-radius: 0px;
+  box-shadow: none;
+  height: var(--scrollbar-height);
+  border: 0;
+}
+
+.vertical::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: #f1f1f1;
+  height: var(--scrollbar-height);
+}
+
+.vertical::-webkit-scrollbar {
+  height: var(--scrollbar-height);
+}
+
+.paragraph {
+  position: relative;
+  padding: 1rem;
+}
+
+.vertical span {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+@font-face {
+  font-family: Flow;
+  font-weight: 400;
+  font-style: normal;
+  src: url(https://tailwindcss.com/_next/static/media/flow-circular.853ff76f08786ae44ca0f167cac8bbe5.woff)
+    format("woff");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap");
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .header {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+  }
+  .subheader {
+    position: absolute;
+    top: 2rem;
+    right: 0.5rem;
+    display: flex;
+  }
+  .footer {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0.5rem;
+  }
+  .link {
+    font-size: 0.75rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0.25rem;
+  }
+  .link > * {
+    margin: 0.35rem;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .catch-copy {
+    color: whitesmoke;
+    font-size: 0.75rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    display: flex;
+    padding: 0.25rem;
+  }
+  .title {
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    margin: 0.25rem;
+  }
+  .author {
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    margin: 0.25rem;
+  }
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(./firework.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(21%);
+  }
+  .vertical {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 3.5rem 0;
+    writing-mode: vertical-rl;
+    color: whitesmoke;
+    font-weight: 500;
+    font-family: Flow;
+    overflow-x: scroll;
+    user-select: none;
+    scroll-snap-type: x mandatory;
+  }
+  .vertical .paragraph {
+    width: 100vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  .header {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+  }
+  .subheader {
+    position: absolute;
+    top: 2rem;
+    right: 0.5rem;
+    display: flex;
+  }
+  .footer {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0.5rem;
+  }
+  .link {
+    font-size: 0.75rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0.25rem;
+  }
+  .link > * {
+    margin: 0.35rem;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .catch-copy {
+    color: whitesmoke;
+    font-size: 0.75rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    display: flex;
+    padding: 0.25rem;
+  }
+  .title {
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    margin: 0.25rem;
+  }
+  .author {
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    margin: 0.25rem;
+  }
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(./firework.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(21%);
+  }
+  .vertical {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 3.5rem 0;
+    writing-mode: vertical-rl;
+    color: whitesmoke;
+    font-weight: 500;
+    font-family: Flow;
+    overflow-x: scroll;
+    user-select: none;
+    scroll-snap-type: x mandatory;
+  }
+  .vertical .paragraph {
+    width: 100vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1366px) {
+  .header {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+  }
+  .subheader {
+    position: absolute;
+    top: 2rem;
+    right: 0.5rem;
+    display: flex;
+  }
+  .footer {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0.5rem;
+  }
+  .link {
+    font-size: 0.75rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0.25rem;
+  }
+  .link > * {
+    margin: 0.35rem;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .catch-copy {
+    color: whitesmoke;
+    font-size: 0.75rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    display: flex;
+    padding: 0.25rem;
+  }
+  .title {
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    margin: 0.25rem;
+  }
+  .author {
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    margin: 0.25rem;
+  }
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(./firework.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(21%);
+  }
+  .vertical {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 3.5rem 0;
+    writing-mode: vertical-rl;
+    color: whitesmoke;
+    font-weight: 500;
+    font-family: Flow;
+    overflow-x: scroll;
+    user-select: none;
+    scroll-snap-type: x mandatory;
+  }
+  .vertical .paragraph {
+    width: 100vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+@media only screen and (min-width: 1367px) {
+  .header {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+  }
+  .subheader {
+    position: absolute;
+    top: 2rem;
+    right: 0.5rem;
+    display: flex;
+  }
+  .footer {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0.5rem;
+  }
+  .link {
+    font-size: 0.75rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0.25rem;
+  }
+  .link > * {
+    margin: 0.35rem;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .catch-copy {
+    color: whitesmoke;
+    font-size: 0.75rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    display: flex;
+    padding: 0.25rem;
+  }
+  .title {
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    margin: 0.25rem;
+  }
+  .author {
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: "Noto Sans JP", sans-serif;
+    user-select: none;
+    margin: 0.25rem;
+  }
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(./firework.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(21%);
+  }
+  .vertical {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 3.5rem 0;
+    writing-mode: vertical-rl;
+    color: whitesmoke;
+    font-weight: 500;
+    font-family: Flow;
+    overflow-x: scroll;
+    user-select: none;
+  }
+  .vertical .paragraph {
+    width: 100vw;
+  }
+}
